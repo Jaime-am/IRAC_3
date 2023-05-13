@@ -18,7 +18,6 @@ if (!$conn)
 //Cargamos variables del form del login para realizar las consultas a la BD
 $user_login = $_POST["user_login"];
 $pass_login = $_POST["password_login"];
-$decoder        = $_POST["decoder"];
 $user_signup = $_POST["user_signup"];
 $password_signup = $_POST["password_signup"];
 $nombre        = $_POST["nombre"];
