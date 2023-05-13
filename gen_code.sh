@@ -8,7 +8,8 @@ key_dec_aud=$(echo $key_aud | xxd -r -p | base64)
 
 sudo mysql -u jaime <<-EOF
           use irac;
-          INSERT INTO usuarios (decoder_vid,decoder_aud) VALUES ('$(echo $key_dec_vid)', '$(echo $key_dec_aud)') WHERE user = '$(echo $user)';
+          UPDATE usuarios SET decoder_vid = '$(echo $key_dec_vid)' WHERE user = '$(echo $user)';
+          UPDATE usuarios SET decoder_aud = '$(echo $key_dec_aud)' WHERE user = '$(echo $user)';
 EOF
 
 sudo mkdir /var/www/html/$(echo $user)
