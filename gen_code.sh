@@ -21,3 +21,5 @@ bash -p -c "/Bento4-SDK-1-6-0-639.x86_64-unknown-linux/bin/mp4encrypt --method M
 cd /var/www/html/$(echo $user) && bash -p -c "/Bento4-SDK-1-6-0-639.x86_64-unknown-linux/bin/mp4dash /var/www/html/$(echo $user)/high-config-enc.mp4 /var/www/html/$(echo $user)/med-config-enc.mp4 /var/www/html/$(echo $user)/low-config-enc.mp4"
 
 bash -p -c "cp /var/www/html/index.html /var/www/html/$(echo $user)"
+bash -p -c "sed -i 's/key_vid/$(echo $key_dec_vid)/g' index.html"
+bash -p -c "sed -i 's/key_aud/$(echo $key_dec_aud)/g' index.html"
