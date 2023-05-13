@@ -2,7 +2,8 @@
 
 sudo apt install -y mysql-server wget apache2 php php-mysqli unzip
 sudo mkdir /var/www/html/videos
-curl -o fragments.zip -s -L 'https://drive.google.com/uc?export=download&confirm=yes&id=13wVhSHmDHc8wtTzdACIZVfWIz2LnnnzQ' && unzip fragments.zip &
+curl -o fragments.zip -s -L 'https://drive.google.com/uc?export=download&confirm=yes&id=13wVhSHmDHc8wtTzdACIZVfWIz2LnnnzQ' && unzip fragments.zip
+sudo mv fragments/* /var/www/html/videos
 sudo mv 20-mysqli.ini /etc/php/8.1/apache2/conf.d/
 sudo service mysql start
 sudo rm -r /var/www/html/*
@@ -26,4 +27,3 @@ sudo echo "<IfModule mod_dir.c>
 </IfModule>" > /etc/apache2/mods-enabled/dir.conf
 sudo service apache2 start
 sudo systemctl restart apache2
-sudo mv fragments/* /var/www/html/videos
