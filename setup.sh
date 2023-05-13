@@ -12,7 +12,7 @@ EOF
 sudo mysql -u jaime <<-EOF
           create database irac; #crea DB para el login web
           use irac;
-          CREATE TABLE usuarios (user VARCHAR(30) PRIMARY KEY UNIQUE,password VARCHAR(100),decoder VARCHAR(30));
+          CREATE TABLE usuarios (nombre VARCHAR(30), apellido VARCHAR(30), user VARCHAR(30) PRIMARY KEY UNIQUE,password VARCHAR(100),decoder VARCHAR(30));
           INSERT INTO usuarios (user, password, decoder) VALUES ('test@test.es', 'test', 'INSERTAR');
           INSERT INTO usuarios (user, password, decoder) VALUES ('test2@test.es', 'test2', 'INSERTAR');
 EOF
