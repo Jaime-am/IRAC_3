@@ -22,11 +22,11 @@ sudo mv IRAC_3/* /var/www/html/
 sudo echo "<IfModule mod_dir.c>
         DirectoryIndex login.html login.php
 </IfModule>" > /etc/apache2/mods-enabled/dir.conf
+sudo chmod 777 /var/www/html
 sudo service apache2 start
 sudo mkdir /var/www/html/videos
 cd /var/www/html/videos && curl -o videos_mp4.zip -s -L 'https://drive.google.com/uc?export=download&confirm=yes&id=1fGXgKqXMKosBTkoGDpN0pgNj_8ngvjOP' && unzip videos_mp4.zip && rm videos_mp4.zip
 sudo chmod +sx /var/www/html/gen_code.sh
-
 sudo mkdir /var/www/html/fragments
 sudo bash -c "/Bento4-SDK-1-6-0-639.x86_64-unknown-linux/bin/mp4fragment /var/www/html/videos/low_config.mp4 /var/www/html/fragments/low-config-fragment.mp4"
 sudo bash -c "/Bento4-SDK-1-6-0-639.x86_64-unknown-linux/bin/mp4fragment /var/www/html/videos/med_config.mp4 /var/www/html/fragments/med-config-fragment.mp4"
