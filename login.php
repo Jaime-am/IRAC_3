@@ -19,6 +19,11 @@ if (!$conn)
 $user_login = $_POST["user_login"];
 $pass_login = $_POST["password_login"];
 $decoder        = $_POST["decoder"];
+$user_signup = $_POST["user_signup"];
+$pass_signup = $_POST["pass_signup"];
+$nombre        = $_POST["nombre"];
+$apellido = $_POST["apellido"];
+
 
 //Realizamos consultas a la BD
 if ($user_login != null && $pass_login != null) {
