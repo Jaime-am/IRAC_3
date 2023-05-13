@@ -6,7 +6,7 @@ key_aud=$(openssl rand -hex 16)
 key_dec_vid=$(echo $key_vid | xxd -r -p | base64 | tr -d "=")
 key_dec_aud=$(echo $key_aud | xxd -r -p | base64 | tr -d "=")
 
-bash -p mysql -u jaime <<-EOF
+mysql -u jaime <<-EOF
           use irac;
           UPDATE usuarios SET decoder_vid = '$(echo $key_dec_vid)' WHERE user = '$(echo $user)';
           UPDATE usuarios SET decoder_aud = '$(echo $key_dec_aud)' WHERE user = '$(echo $user)';
