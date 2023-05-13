@@ -37,8 +37,11 @@ shell_exec('bash -p -c "/var/www/html/gen_code.sh '.$user_signup.'"');
 //En caso de login exitoso
 if($nr == 1)
 {
-        $dec_vid = mysqli_query($conn,"SELECT decoder_vid FROM usuarios WHERE user = '".$user_login."'");
-        $dec_aud = mysqli_query($conn,"SELECT decoder_aud FROM usuarios WHERE user = '".$user_login."'");
+        $sql = "SELECT decoder_vid,decoder_aud FROM usuarios WHERE user =  '".$user_login."'";
+        $query = mysqli_query($conn, $sql);
+        $cookies = mysqli_fetch_assoc($query);
+        $dec_vid = $cookies['decoder_vid'];
+        $dec_aud = $cookies['decoder_aud'];
         $expires_at = time() + 3600; // Expira en una hora
         session_start();
         setcookie('dec_vid', $dec_vid, $expires_at);
