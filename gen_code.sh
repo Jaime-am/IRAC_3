@@ -3,8 +3,8 @@
 user=$1
 key_vid=$(openssl rand -hex 16)
 key_aud=$(openssl rand -hex 16)
-key_dec_vid=$(echo $key_vid | xxd -r -p | base64)
-key_dec_aud=$(echo $key_aud | xxd -r -p | base64)
+key_dec_vid=$(echo $key_vid | xxd -r -p | base64 | tr -d "=")
+key_dec_aud=$(echo $key_aud | xxd -r -p | base64 | tr -d "=")
 
 sudo mysql -u jaime <<-EOF
           use irac;
