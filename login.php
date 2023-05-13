@@ -39,15 +39,17 @@ if($nr == 1)
 {
         $dec_vid = mysqli_query($conn,"SELECT decoder_vid FROM usuarios WHERE user = '".$user_login."'");
         $dec_aud = mysqli_query($conn,"SELECT decoder_aud FROM usuarios WHERE user = '".$user_login."'");
+        $expires_at = time() + 3600; // Expira en una hora
         session_start();
-        $_SESSION['dec_vid'] = $dec_vid;
-        $_SESSION['dec_aud'] = $dec_aud;
+        setcookie('dec_vid', $dec_vid, $expires_at);
+        setcookie('dec_aud', $dec_aud, $expires_at);
         header("Location: index.html");
 
 }
 //En caso de login no exitoso
 else if ($nr == 0) 
 {
+        session_destroy();
         header("Location: login.html");
 }
 
