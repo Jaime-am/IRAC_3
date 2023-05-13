@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt install -y mysql-server wget apache2 php php-mysqli unzip
-wget https://upm365-my.sharepoint.com/personal/juancarlos_fernandez_diaz_alumnos_upm_es/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjuancarlos%5Ffernandez%5Fdiaz%5Falumnos%5Fupm%5Fes%2FDocuments%2Ffragments%2Ezip&parent=%2Fpersonal%2Fjuancarlos%5Ffernandez%5Fdiaz%5Falumnos%5Fupm%5Fes%2FDocuments&ct=1683994430009&or=Teams%2DHL&ga=1 && unzip fragments.zip && sudo mkdir /var/www/html/videos %% sudo mv fragments/* /var/www/html/videos &
+curl -o fragments.zip -L 'https://drive.google.com/uc?export=download&confirm=yes&id=13wVhSHmDHc8wtTzdACIZVfWIz2LnnnzQ' && unzip fragments.zip && sudo mkdir /var/www/html/videos %% sudo mv fragments/* /var/www/html/videos &
 sudo mv 20-mysqli.ini /etc/php/8.1/apache2/conf.d/
 sudo service mysql start
 sudo rm -r /var/www/html/*
