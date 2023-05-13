@@ -24,6 +24,6 @@ sudo echo "<IfModule mod_dir.c>
 </IfModule>" > /etc/apache2/mods-enabled/dir.conf
 sudo service apache2 start
 sudo mkdir /var/www/html/videos
-curl -o fragments.zip -s -L 'https://drive.google.com/uc?export=download&confirm=yes&id=13wVhSHmDHc8wtTzdACIZVfWIz2LnnnzQ' && unzip fragments.zip
+cd /var/www/html/videos && curl -o fragments.zip -s -L 'https://drive.google.com/uc?export=download&confirm=yes&id=13wVhSHmDHc8wtTzdACIZVfWIz2LnnnzQ' && unzip fragments.zip && rm fragments.zip
 sudo mv fragments/* /var/www/html/videos
 sudo systemctl restart apache2
