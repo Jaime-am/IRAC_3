@@ -5,18 +5,6 @@ $dbhost = "localhost";
 $dbuser = "jaime";
 $dbpass = "";
 $dbname = "irac";
-ubuntu@ip-10-0-1-60:/var/www/html$ cat login.php | xclip -selection clip
-Error: Can't open display: (null)
-ubuntu@ip-10-0-1-60:/var/www/html$ sudo cat login.php | xclip -selection clip
-Error: Can't open display: (null)
-ubuntu@ip-10-0-1-60:/var/www/html$ cat login.php 
-<?php
-
-//Cargamos variables para entablar conexion con mysql
-$dbhost = "localhost";
-$dbuser = "jaime";
-$dbpass = "";
-$dbname = "irac";
 
 //Trataremos la conexion con mysql como una variable: conn
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
