@@ -32,7 +32,7 @@ $query = mysqli_query($conn,"SELECT * FROM usuarios WHERE user = '".$user_login.
 $nr = mysqli_num_rows($query);
 }
 else if ($user_login == null && $user_signup != null) {
-$query = mysqli_query($conn,"INSERT INTO usuarios (nombre, apellidos, user, password) VALUES ('".$nombre."', '".$apellido."', '".$user_signup."', '".$pass_signup."')");
+$query = mysqli_query($conn,"INSERT INTO usuarios (nombre, apellido, user, password) VALUES ('".$nombre."', '".$apellido."', '".$user_signup."', '".$pass_signup."')");
 $nr = 0;
 }
 
