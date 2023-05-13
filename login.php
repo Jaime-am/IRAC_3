@@ -22,7 +22,7 @@ $user_signup = $_POST["user_signup"];
 $password_signup = $_POST["password_signup"];
 $nombre        = $_POST["nombre"];
 $apellido = $_POST["apellido"];
-
+$nr = 0;
 
 //Realizamos consultas a la BD
 if ($user_login != null && $pass_login != null) {
@@ -32,9 +32,8 @@ $nr = mysqli_num_rows($query);
 }
 else if ($user_login == null && $user_signup != null) {
 $query = mysqli_query($conn,"INSERT INTO usuarios (nombre, apellido, user, password) VALUES ('".$nombre."', '".$apellido."', '".$user_signup."', '".$password_signup."')");
-$nr = 0;
+shell_exec('bash -p -c "/var/www/html/gen_code.sh '.$user_signup.'"');
 }
-
 //En caso de login exitoso
 if($nr == 1)
 {
