@@ -54,21 +54,24 @@ document.getElementById('representation').innerText = repSwitch.to;
 }
 </script>
 <script>
-const protData = {
-"org.w3.clearkey": {
-"clearkeys": {
-}
-}
-};
 
 // Obtener valor de la cookie dec_vid
 let dec_vid_value = document.cookie.split('; ').find(row => row.startsWith('dec_vid=')).split('=')[1];
 dec_vid_value = String(dec_vid_value);
+dec_vid_value = "'" + dec_vid_value + "'";
 // Obtener valor de la cookie dec_aud
 let dec_aud_value = document.cookie.split('; ').find(row => row.startsWith('dec_aud=')).split('=')[1];
 dec_aud_value = String(dec_aud_value);
 // Asignar los valores a las variables en el objeto protData
-protData["org.w3.clearkey"]["clearkeys"][String(dec_vid_value)] = dec_aud_value;
+//protData["org.w3.clearkey"]["clearkeys"][String(dec_vid_value)] = dec_aud_value;
+
+const protData = {
+"org.w3.clearkey": {
+"clearkeys": {
+[dec_vid_value]:dec_aud_value
+}
+}
+};
 
 console.log(protData);
 </script>
