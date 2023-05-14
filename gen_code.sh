@@ -18,6 +18,6 @@ bash -p -c "/Bento4-SDK-1-6-0-639.x86_64-unknown-linux/bin/mp4encrypt --method M
 bash -p -c "/Bento4-SDK-1-6-0-639.x86_64-unknown-linux/bin/mp4encrypt --method MPEG-CENC --key 1:$(echo $key_vid):random --property 1:KID:$(echo $key_aud) --global-option mpeg-cenc.eme-pssh:true /var/www/html/fragments/med-config-fragment.mp4 /var/www/html/$(echo $user)/med-config-enc.mp4"
 bash -p -c "/Bento4-SDK-1-6-0-639.x86_64-unknown-linux/bin/mp4encrypt --method MPEG-CENC --key 1:$(echo $key_vid):random --property 1:KID:$(echo $key_aud) --global-option mpeg-cenc.eme-pssh:true /var/www/html/fragments/high-config-fragment.mp4 /var/www/html/$(echo $user)/high-config-enc.mp4"
 
-cd /var/www/html/$(echo $user) && bash -p -c "/Bento4-SDK-1-6-0-639.x86_64-unknown-linux/bin/mp4dash /var/www/html/$(echo $user)/high-config-enc.mp4 /var/www/html/$(echo $user)/med-config-enc.mp4 /var/www/html/$(echo $user)/low-config-enc.mp4"
+cd /var/www/html/$(echo $user) && bash -p -c "/Bento4-SDK-1-6-0-639.x86_64-unknown-linux/bin/mp4dash /var/www/html/$(echo $user)/low-config-enc.mp4 /var/www/html/$(echo $user)/med-config-enc.mp4 /var/www/html/$(echo $user)/high-config-enc.mp4"
 bash -p -c "chmod 777 /var/www/html/$(echo $user)/"
 bash -p -c "cp /var/www/html/index.html /var/www/html/$(echo $user)/index.html"
