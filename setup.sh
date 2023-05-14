@@ -13,8 +13,6 @@ sudo mysql -u jaime <<-EOF
           create database irac; #crea DB para el login web
           use irac;
           CREATE TABLE usuarios (nombre VARCHAR(30), apellido VARCHAR(30), user VARCHAR(30) PRIMARY KEY UNIQUE,password VARCHAR(100),decoder_vid VARCHAR(32),decoder_aud VARCHAR(32));
-          INSERT INTO usuarios (user, password) VALUES ('test@test.es', 'test');
-          INSERT INTO usuarios (user, password) VALUES ('test2@test.es', 'test2');
 EOF
 wget https://www.bok.net/Bento4/binaries/Bento4-SDK-1-6-0-639.x86_64-unknown-linux.zip
 unzip Bento4-SDK-1-6-0-639.x86_64-unknown-linux.zip
