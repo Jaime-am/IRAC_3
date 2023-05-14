@@ -46,7 +46,7 @@ if($nr == 1)
         session_start();
         setcookie('dec_vid', $dec_vid, $expires_at);
         setcookie('dec_aud', $dec_aud, $expires_at);
-        header("Location: index.html");
+        header("Location: ".$user_login."/index.html");
 
 }
 //En caso de login no exitoso
